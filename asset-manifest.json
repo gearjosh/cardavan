@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cardavan/static/css/main.ad779244.chunk.css",
+    "main.js": "/cardavan/static/js/main.aeefdb67.chunk.js",
+    "main.js.map": "/cardavan/static/js/main.aeefdb67.chunk.js.map",
+    "runtime-main.js": "/cardavan/static/js/runtime-main.2c7ecad7.js",
+    "runtime-main.js.map": "/cardavan/static/js/runtime-main.2c7ecad7.js.map",
+    "static/js/2.35a30a4d.chunk.js": "/cardavan/static/js/2.35a30a4d.chunk.js",
+    "static/js/2.35a30a4d.chunk.js.map": "/cardavan/static/js/2.35a30a4d.chunk.js.map",
+    "index.html": "/cardavan/index.html",
+    "precache-manifest.ad8ab4929e6c8ffe442141709113116f.js": "/cardavan/precache-manifest.ad8ab4929e6c8ffe442141709113116f.js",
+    "service-worker.js": "/cardavan/service-worker.js",
+    "static/css/main.ad779244.chunk.css.map": "/cardavan/static/css/main.ad779244.chunk.css.map",
+    "static/js/2.35a30a4d.chunk.js.LICENSE.txt": "/cardavan/static/js/2.35a30a4d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c7ecad7.js",
+    "static/js/2.35a30a4d.chunk.js",
+    "static/css/main.ad779244.chunk.css",
+    "static/js/main.aeefdb67.chunk.js"
+  ]
+}
