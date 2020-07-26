@@ -1,5 +1,5 @@
 import React from 'react';
-import CardBuilder from './components/CardBuilder';
+import CardBuilder from './components/CardController';
 import CardShower from './components/CardShower';
 import DeckList from "./components/DeckList";
 import { connect } from 'react-redux';

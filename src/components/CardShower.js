@@ -5,7 +5,14 @@ import styled from "styled-components";
 const Cardtainer = styled.section`
   background: linear-gradient(to right, skyblue, violet);
   padding: 1vw;
-  `;
+`;
+
+// const Header = styled.h3`
+//   color: #edd0c5;
+//   margin: 0 0 1vw 0;
+//   font-size: 2.8rem;
+//   font-weight: bold;
+// `;
 
 const Card = styled.div`
   display: grid;
@@ -22,21 +29,29 @@ const Image = styled.img`
 `;
 
 function CardShower(props) {
+  let showingCard;
+  if (props.flippedCard) {
+    showingCard = props.flippedCard;
+  } else {
+    showingCard = props.deck[props.selectedCard];
+  }
+  
   let cardGuts;
   if (props.deck.length > 0) {
     cardGuts = (
       <React.Fragment>
-        <h1>{props.deck[props.selectedCard].category}</h1>
+        <h1>{showingCard.category}</h1>
         <Image
-          src={props.deck[props.selectedCard].imageLink}
+          src={showingCard.imageLink}
           alt="card"
         />
-        <p>{props.deck[props.selectedCard].text}</p>
+        <p>{showingCard.text}</p>
       </React.Fragment>
     );
   } else {
     cardGuts = <p>Please make a card.</p>;
   }
+
   return (
     <Cardtainer>
         <Card>
@@ -49,7 +64,8 @@ function CardShower(props) {
 const mapStateToProps = state => {
   return {
     deck: state.deck,
-    selectedCard: state.selectedCard
+    selectedCard: state.selectedCard,
+    flippedCard: state.flippedCard,
   };
 };
 
