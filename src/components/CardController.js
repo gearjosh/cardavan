@@ -12,7 +12,7 @@ const Container = styled.section`
 
 const Input = styled.input`
 	border: none;
-	border-bottom: .125rem solid green;
+	border-bottom: .125rem solid skyblue;
 	outline: none;
 	// width: 100%;
 	margin-bottom: .5rem;
@@ -22,6 +22,13 @@ const Column = styled.div`
 	display: flex;
 	flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+`;
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
 `;
 
@@ -46,8 +53,8 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-	border: none;
-  background-color: teal;
+  border: none;
+  background-color: #ff738a;
   color: ivory;
   padding: 1vw;
   font-size: 1.1rem;
@@ -55,13 +62,13 @@ const Button = styled.button`
   margin-bottom: 1vw;
 `;
 
-const LilButton = styled(Button)`
+const SubButton = styled(Button)`
   border: none;
-  background-color: orange;
-  color: brown;
+  background-color: tomato;
+  color: ivory;
   padding: 1vw;
   font-size: 1.1rem;
-  width: 49%;
+  width: 100%;
   margin-bottom: 1vw;
 `;
 
@@ -110,10 +117,32 @@ function CardController(props) {
   const shuffle = () => {
     const { dispatch } = props;
     dispatch({
-      type: "SHUFFLE",
-      deck: props.deck
+      type: "SHUFFLE"
     });
   };
+
+  const draw = () => {
+    const { dispatch } = props;
+    if (props.drawPile.length < 1) {
+      dispatch({
+        type: "SHUFFLE"
+      });
+      dispatch({
+        type: "DRAW",
+      });
+    } else {
+      dispatch({
+        type: "DRAW"
+      })
+    }
+  }
+
+  let drawButton;
+  if (props.shuffled) {
+    drawButton = <SubButton onClick={draw}>Draw</SubButton>;
+  } else {
+    drawButton = null;
+  }
 
 	return (
     <Container>
@@ -147,6 +176,7 @@ function CardController(props) {
         </Box>
         <Button onClick={add}>Add Card</Button>
         <Button onClick={shuffle}>Shuffle Deck</Button>
+        {drawButton}
       </Column>
     </Container>
   );
@@ -155,7 +185,8 @@ function CardController(props) {
 const mapStateToProps = state => {
   return {
     deck: state.deck,
-    // selectedCard: state.selectedCard
+    drawPile: state.drawPile,
+    shuffled: state.shuffled,
   };
 };
 

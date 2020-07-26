@@ -14,7 +14,7 @@ export default (state = {
     case "ADD_CARD":
       const newCard = { ...action.card, id: state.deck.length };
       const newDeck = state.deck.concat(newCard);
-      newState = { ...state, deck: newDeck, selectedCard: newDeck.length - 1 };
+      newState = { ...state, deck: newDeck, selectedCard: newDeck.length - 1, flippedCard: null };
       return newState;
     case "SELECT":
       newState = { ...state, selectedCard: action.id, flippedCard: null };
@@ -22,15 +22,18 @@ export default (state = {
     case "SHUFFLE":
       const shuffle = (ary) => {
         const arySafe = [...ary]
+        console.log('arySafe: ', arySafe)
         for (let i = arySafe.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [arySafe[i].id, arySafe[j].id] = [arySafe[j].id, arySafe[i].id];
+          [arySafe[i], arySafe[j]] = [arySafe[j], arySafe[i]];
         }
         return arySafe;
       };
+      const shuffledDeck = shuffle(state.deck);
       newState = { ...state, 
-        deck: shuffle(action.deck), 
         shuffled: true,
+        drawPile: shuffledDeck,
+        discardPile: [],
         flippedCard: {
           category: '        ',
           text: '        ',
@@ -38,7 +41,12 @@ export default (state = {
         }
       };
       return newState;
-    // case: "";
+    case "DRAW":
+      const drawnCard = state.drawPile[0];
+      const newDrawPile = state.drawPile.splice(1);
+      const newDiscardPile = state.discardPile.concat(drawnCard);
+      newState = { ...state, flippedCard: drawnCard, drawPile: newDrawPile, discardPile: newDiscardPile }
+      return newState;
     default:
       return state;
   }

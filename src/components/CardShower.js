@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Cardtainer = styled.section`
   background: linear-gradient(to right, skyblue, violet);
-  padding: 1vw;
+  padding: 3vw 1vw 1vw 1vw;
 `;
 
 // const Header = styled.h3`
@@ -16,7 +16,7 @@ const Cardtainer = styled.section`
 
 const Card = styled.div`
   display: grid;
-  grid-template: 1fr 6fr 4fr / 100%;
+  grid-template: 1fr 6fr 2fr / 100%;
   background-color: pink;
   border-radius: .5rem;
   padding: 1vw;

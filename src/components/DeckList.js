@@ -11,9 +11,9 @@ const Container = styled.section`
 `;
 
 const Box = styled.div`
-  padding-left: .5vw;
+  padding-left: 0.5vw;
   box-sizing: border-box;
-  border-bottom: .125vw solid white;
+  border-bottom: 0.125vw solid #ff913b;
   cursor: pointer;
 `;
 
@@ -23,14 +23,14 @@ const HeaderBox = styled(Box)`
 `;
 
 const Text = styled.p`
-  color: indigo;
+  color: peachpuff;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
 
 const Header = styled.h3`
-  color: white;
+  color: peachpuff;
   margin: .75vw;
   font-size: 2.8rem;
   font-weight: bold;
