@@ -6,16 +6,16 @@ Commissioned for Nathan Harrison by Josh Gearheart
 ## Specs
 
 ### A “card” should have:
-- [ ] a value
-- [ ] a “suit” or category
-- [ ] maybe something else?
+- [x] a value
+- [x] a “suit” or category
+- [x] maybe something else? (an image is what it has)
 
 ### Then to function, the app needs to:
-- [ ] accept values
-- [ ] accept suits?
-- [ ] apply the range of values across each suit to create unique combos (totalling suits * values in number)
-- [ ] create an array of those “cards” and randomize its order
-- [ ] allow the user to draw the top card of the deck (first in the array)
+- [x] accept values
+- [x] accept suits?
+- [x] apply the range of values across each suit to create unique combos (totalling suits * values in number)
+- [x] create an array of those “cards” and randomize its order
+- [x] allow the user to draw the top card of the deck (first in the array)
 - [ ] export their deck as a csv or the like, presumably to be input later to use in play
 - [ ] maybe there is a discard pile?
 - [ ] maybe there are more actions?
