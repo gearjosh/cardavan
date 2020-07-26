@@ -7,12 +7,16 @@ const Cardtainer = styled.section`
   padding: 3vw 1vw 1vw 1vw;
 `;
 
-// const Header = styled.h3`
-//   color: #edd0c5;
-//   margin: 0 0 1vw 0;
-//   font-size: 2.8rem;
-//   font-weight: bold;
-// `;
+const Header = styled.h3`
+  color: #ff738a;
+  margin: 0 0 1vw 0;
+  font-size: 2.8rem;
+  font-weight: bold;
+`;
+
+const Text = styled.p`
+  color: #64497a;
+`;
 
 const Card = styled.div`
   display: grid;
@@ -40,12 +44,12 @@ function CardShower(props) {
   if (props.deck.length > 0) {
     cardGuts = (
       <React.Fragment>
-        <h1>{showingCard.category}</h1>
+        <Header>{showingCard.category}</Header>
         <Image
           src={showingCard.imageLink}
           alt="card"
         />
-        <p>{showingCard.text}</p>
+        <Text>{showingCard.text}</Text>
       </React.Fragment>
     );
   } else {

@@ -17,10 +17,10 @@ const Box = styled.div`
   cursor: pointer;
 `;
 
-const HeaderBox = styled(Box)`
-  background-color: tomato;
-  width: 100%;
-`;
+// const HeaderBox = styled(Box)`
+//   background-color: tomato;
+//   width: 100%;
+// `;
 
 const Text = styled.p`
   color: peachpuff;

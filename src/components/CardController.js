@@ -25,12 +25,12 @@ const Column = styled.div`
   width: 100%;
 `;
 
-const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-`;
+// const Row = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   width: 100%;
+// `;
 
 const Header = styled.h3`
   color: #8779b3;
