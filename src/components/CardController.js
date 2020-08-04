@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  // width: 40vw;
 	color: hotpink;
 	background-color: peachpuff;
   padding: 1rem;
-  // max-width: 40%;
 `;
 
 const Input = styled.input`

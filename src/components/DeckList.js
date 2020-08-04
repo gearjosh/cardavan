@@ -3,30 +3,34 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 
 const Container = styled.section`
+  grid-area: 1 / 3 / 3 / 3;
   display: grid;
-  position:relative;
+  position: relative;
   grid-template-columns: 100%;
   grid-auto-rows: minmax(5rem, 5vh);
   overflow-y: auto;
+  background-color: tomato;
 `;
-
-const Box = styled.div`
+  
+  const Box = styled.div`
+  background-color: tomato;
   padding-left: 0.5vw;
   box-sizing: border-box;
   border-bottom: 0.125vw solid #ff913b;
   cursor: pointer;
 `;
 
-// const HeaderBox = styled(Box)`
-//   background-color: tomato;
-//   width: 100%;
-// `;
-
 const Text = styled.p`
   color: peachpuff;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+`;
+
+const HeaderBox = styled(Box)`
+  position: sticky;
+  top: 0;
+  width: 100%;
 `;
 
 const Header = styled.h3`
@@ -66,9 +70,9 @@ function DeckList(props) {
   return (
 
     <Container>
-      <Box>        
+      <HeaderBox>        
         <Header>Decklist</Header>
-      </Box>
+      </HeaderBox>
       {Boxes}
     </Container>
   );
